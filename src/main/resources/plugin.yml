@@ -1,0 +1,31 @@
+name: CampfireStories
+version: 1.0.0
+main: ru.cupcqkeee.campfirestories.CampfireStories
+api-version: '1.21'
+authors: [CUPcqkeee]
+description: Рассказывай истории у костра
+website: https://t.me/CUPcqkeee
+
+commands:
+  campfire:
+    description: Управление историями у костра
+    usage: /campfire help
+    aliases: [cs, story, stories, campfirestories]
+
+permissions:
+  campfirestories.use:
+    description: Позволяет ставить костры-истории и писать собственные истории.
+    default: true
+  campfirestories.read:
+    description: Позволяет читать чужие истории.
+    default: true
+  campfirestories.admin:
+    description: Полный доступ к историям, управление и перезагрузка плагина.
+    default: op
+    children:
+      campfirestories.use: true
+      campfirestories.read: true
+      campfirestories.reload: true
+  campfirestories.reload:
+    description: Позволяет перезагружать конфигурацию плагина.
+    default: op
